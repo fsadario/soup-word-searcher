@@ -1,4 +1,4 @@
-import WordSearcher from '@/wordsearcher';
+import WordSearcher from '@/wordSearcher';
 
 const INSOUP = ['ZAPATILLA', 'CAZADOR', 'RELOJ', 'ORUGA', 'HORMONAS', 'CUCHILLA'];
 const NOTINSOUP = ['ZAPATILLAS', 'CUCHILLAS', 'BAUFEST'];
