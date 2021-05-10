@@ -8,15 +8,15 @@ enum Direction {
   all,
 }
 
+type Pair = [number, number]  
 export default class WordSearcher {
   soup: string[][];
 
   constructor(soup: string[][]) {
     this.soup = soup;
   }
-
-  public lookupNear(
-    pair: [number, number],
+   public lookupNear(
+    pair: Pair,
     char: string,
     omitDirection: Direction
   ): number[][] {
@@ -61,7 +61,7 @@ export default class WordSearcher {
     return coincidences;
   }
 
-  public searchWord(word: string): boolean {
+  public isPresent(word: string): boolean {
     let startPoints = this.searchCoincidences(word[0]);
 
     let newStartPoints = startPoints.map((pair: any) =>
@@ -95,15 +95,5 @@ export default class WordSearcher {
       }
     }
     return isWordInSoup;
-  }
-
-  public reverseWord(word: string): string {
-    return word.split("").reverse().join("");
-  }
-
-  public isPresent(word: string): boolean {
-    if (this.searchWord(word)) return true;
-    if (this.searchWord(this.reverseWord(word))) return true;
-    return false;
   }
 }
